@@ -127,9 +127,9 @@ export default App;
 # [***useEffect***](https://www.youtube.com/watch?v=kyodvzc5GHU&list=PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO&index=2)
 
 > 용어정리
-> > - **마운트** :
-> > - 
-> > - **언마운트**:
+> > - **마운트** : 화면에 첫 랜더링
+> > - **업데이트** : 재랜더링
+> > - **언마운트** : 화면에서 사라질 때
 >
 > 개념정리
 >

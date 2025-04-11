@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <div id="root"></div>
+  <script type="text/babel">
+
+    function MinutesToHours(){
+      const [amount,setAmount]= React.useState(0);
+      const [inverted,setInverted]= React.useState(false);
+
+      const onChange = (event) => {
+        setAmount(event.target.value);
+      };
+
+      const reset = () => setAmount(0);
+      const onInvert = () => {
+        reset();
+        setInverted((current) => !current); 
+      }
+
+      return (
+        <div>
+          <div>
+            <label htmlFor="amount">분 => </label>
+            <input 
+            value={inverted ? Math.round(amount*60) : amount } 
+            id="minutes" 
+            placeholder = "분을 적으세용" 
+            type ="number" 
+            onChange={onChange} 
+            disabled={inverted}
+          />
+          </div>
+
+          <div>
+            <label htmlFor="hour"> 시간 => </label>
+            <input 
+            value={inverted ? amount : Math.round(amount/60)}  
+            id="hour"  
+            placeholder = "시간을 적으세용" 
+            type ="number" 
+            disabled={!inverted} 
+            onChange={onChange}
+          />
+          </div>
+          <button onClick = {reset}>리셋하기</button>
+          <button onClick = {onInvert}>{inverted ? "Trun back!" : "inverted?"}</button>
+        </div>
+      );
+    };
+    function KilleToMaile(){
+      const [amount,setAmount] = React.useState(0);
+
+      function Reset() {
+        setAmount((current) => current = 0);
+      }
+      return (
+        <div>
+          <div>
+            <label> 킬로미터 => </label>
+            <input 
+            value = {amount}
+            type="number" 
+            placeholder = "write a Killomiter"
+            
+            />
+          </div>
+          <div>
+            <label> 마일 => </label>
+            <input 
+            type="number" 
+            placeholder = "write a Mile"
+            disabled
+            />
+          </div>
+          
+          <button onclick = {Reset}> 리셋하기</button>
+          <button> 단위 변환하기</button>
+        </div>
+        // first div
+      );
+    };
+    function App(){
+      const [index,setIndex] = React.useState("1");
+      const onselect = (event) => {
+        setIndex(event.target.value);
+        
+      }
+      return (
+        <div>
+            <h1>멋진 변환기</h1>
+            <select value = {index} onChange = {onselect}>
+              <option value="0"> Minutes & Hour</option>
+              <option value = "1"> Km & Miles</option>
+            </select>
+            {index === "0" ? <MinutesToHours /> : null}
+            {index == "1" ? <KilleToMaile /> : null}
+            {/*index의 변화를 리스닝 함*/}
+        </div>
+      );
+    };
+    
+    const root = document.getElementById("root");
+    ReactDOM.render(<MinutesToHours />,root); 
+    ReactDOM.render(<App />,root); 
+  </script>
+</body>
+</html>

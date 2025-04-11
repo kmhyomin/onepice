@@ -1,0 +1,44 @@
+{
+  const [amount,setAmount]= React.useState(0);
+  const [inverted,setInverted]= React.useState(false);
+
+  const onChange = (event) => {
+    setAmount(event.target.value);
+  };
+
+  const reset = () => setAmount(0);
+  const onInvert = () => {
+    reset();
+    setInverted((current) => !current); 
+  }
+
+  return (
+    <div>
+      <div>
+        <label htmlFor="amount">분 => </label>
+        <input 
+        value={inverted ? Math.round(amount*60) : amount } 
+        id="minutes" 
+        placeholder = "분을 적으세용" 
+        type ="number" 
+        onChange={onChange} 
+        disabled={inverted}
+      />
+      </div>
+
+      <div>
+        <label htmlFor="hour"> 시간 => </label>
+        <input 
+        value={inverted ? amount : Math.round(amount/60)}  
+        id="hour"  
+        placeholder = "시간을 적으세용" 
+        type ="number" 
+        disabled={!inverted} 
+        onChange={onChange}
+      />
+      </div>
+      <button onClick = {reset}>리셋하기</button>
+      <button onClick = {onInvert}>{inverted ? "Trun back!" : "inverted?"}</button>
+    </div>
+  );
+};

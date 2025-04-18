@@ -1,0 +1,65 @@
+import {useState, useEffect} from "react";
+
+function App() {
+  const [loading, setLoading] = useState(true);
+  const [coins,setCoins] = useState([]);
+  const [amount, setAmount] =useState("");
+  const onChange= (event) => setAmount(event.target.value);
+  const [selectCoin, setselectCoin] = useState();
+
+  const coinCalculator = () => {
+    if(!selectCoin || amount === "") return null
+      const price = selectCoin.quotes.USD.price;
+      const totalPrice = parseFloat(amount) / price;
+      return totalPrice;
+  };
+
+
+  useEffect(() =>{
+    fetch("https://api.coinpaprika.com/v1/tickers")
+    .then((response) => response.json())
+    .then(json => {
+      setCoins(json);
+      setLoading(false);
+    });
+  },[])
+  
+  return (
+    <div>
+      <h1> The Coins! {loading ? "" : `(${coins.length})`}</h1>
+      <label>현재 소지중인 자산의 액수 (단위 : 원) : </label>
+      <input 
+      type="number" 
+      placeholder="단위는 $ 입니다."
+      value={amount}
+      onChange={onChange}
+      ></input>
+      
+      <label> <br />바꾸고 싶은 코인: </label>
+      {loading ? <strong>Loading...</strong> : 
+        <select onChange={(event) => {
+          const selected = coins.find((coin) => coin.id === event.target.value);
+          console.log(event.target.value);
+          setselectCoin(selected);
+        }}>
+          {coins.map((coin) => (
+              <option 
+                value={coin.id}
+                key={coin.id}
+              >
+                {coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
+              </option>
+          ))
+          }
+        </select>
+      }
+      <h2>
+          💰 너의 돈 {amount === "" ? "0" : (parseFloat(amount) || 0).toLocaleString()}원으로 <br />
+          🪙 {selectCoin ? selectCoin.name : "선택된 코인 없음"} 의 코인을 <br />
+          📊 약 {coinCalculator()?.toFixed(6)}(USD) 달러 보유 할 수 있어.
+      </h2>
+    </div>
+  );
+}
+
+export default App;

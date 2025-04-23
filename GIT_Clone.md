@@ -78,6 +78,17 @@ git push를 하면 변경사항 모든게 랩에 올라감.
 
 git pull 원격 브랜치와 내 pc의 작업 환경을 최신화 시키는 것.
 
+## 작업 종료후 저장하는 법.
+>### git add (저장)
+>1. git add. : .(점)의 의미 => 모두
+>2. git add./ : /(슬래시) 뒤에 저장하고픈 폴더의 경로를 작성.
+
+
+
+>### git commit (부가설명 추가)
+>1. git commit -m "" : 내가 이런걸 했다. 는 메세지를 붙이는 것. 간결하고 의도가 명확히 드러나야함.
+> ex1. index.js파일의 오류를 수정했다 => git commit -m "fix: index.js"
+> ex2. index.js파일에 기능을 추가했다 => git commit -m "add: index.js"
 커밋은 하나하나 id를 갖고 있음
 
 하면 안되는거
@@ -91,10 +102,11 @@ git pull 원격 브랜치와 내 pc의 작업 환경을 최신화 시키는 것.
 **커밋 id가 다르면 push를 햇을때 올라가지 않음**
 
 
-잘못 했을 때 원복하는 방법
+# 잘못 했을 때 원복하는 방법
 git revert (돌리다, 부활시키다, 복귀 시키다.) 커밋 하나를 취소함
 그래서 git revert 뒤에 복귀할 커밋의 id(최소한 7자리 이상) 을 적으면 됨
 
+## 아무것도 안 적히고 커서만 깜빡일 때
 :w 저장
 :q 저장 후 종료
 
@@ -104,23 +116,12 @@ i를 누르면 인서트 상태가 됨
 
 
 
-git bash 복붙하깅
+### git bash 복붙
 복 : shift + ctrl+ insert
 붙 : shift + insert
 
 
-git 옮기는 법
-git switch (2.13보다 커야 작동됨)
-git checkout 옮길 파일 이름
-branch 바꾸는 명령어임
-
-git branch 없애는 법
-git branch -d {id}
-
-
-과제 평가 기준
-1. 커밋이 적절히 되었는가
-  
-
-
-노드 버전이 맞지 않으면 => 
+## git 옮기는 법
+> git switch {바꾸고 싶은 브랜치 이름} : 오직 브랜치를 바꾸기 위한 명령어.(v 2.13보다 커야 작동됨)
+> git checkout {옮길 파일 이름} : branch 바꾸는 명령어임 
+> git branch 삭제 : git branch -d {id} (뭔가 위험해보이니까 하지 말자.)

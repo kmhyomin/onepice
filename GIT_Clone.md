@@ -78,18 +78,20 @@ git push를 하면 변경사항 모든게 랩에 올라감.
 
 git pull 원격 브랜치와 내 pc의 작업 환경을 최신화 시키는 것.
 
-## 작업 종료후 저장하는 법.
+## 작업 종료후 저장하는 법. (git bash기준)
 >### git add (저장)
 >1. git add. : .(점)의 의미 => 모두
 >2. git add./ : /(슬래시) 뒤에 저장하고픈 폴더의 경로를 작성.
-
-
 
 >### git commit (부가설명 추가)
 >1. git commit -m "" : 내가 이런걸 했다. 는 메세지를 붙이는 것. 간결하고 의도가 명확히 드러나야함.
 > ex1. index.js파일의 오류를 수정했다 => git commit -m "fix: index.js"
 > ex2. index.js파일에 기능을 추가했다 => git commit -m "add: index.js"
 커밋은 하나하나 id를 갖고 있음
+### git push
+>1. 일반적인 명령어 : git push
+>2. 안전을 위한 명령어 (권장) : git push origin khm83029
+
 
 하면 안되는거
   강제 삭제: 전의 커밋 id를 덮어 씌우는 것.

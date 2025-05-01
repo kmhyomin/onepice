@@ -1,4 +1,4 @@
-# 2025.03.18 (6일차)
+# 2025.03.28 (6일차)
 
 [별코딩](www.youtube.com/@starcoding)으로 React Hook에 대해 공부했다.
 

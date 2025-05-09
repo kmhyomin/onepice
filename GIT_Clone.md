@@ -125,6 +125,6 @@ i를 누르면 인서트 상태가 됨
 
 
 ## git 옮기는 법
-> git switch {바꾸고 싶은 브랜치 이름} : 오직 브랜치를 바꾸기 위한 명령어.(v 2.13보다 커야 작동됨)
-> git checkout {옮길 파일 이름} : branch 바꾸는 명령어임 
-> git branch 삭제 : git branch -d {id} (뭔가 위험해보이니까 하지 말자.)
+> git switch {바꾸고 싶은 브랜치 이름} : 오직 브랜치를 바꾸기 위한 명령어.(v 2.13보다 커야 작동됨)<br>
+> git checkout {옮길 파일 이름} : branch 바꾸는 명령어임 <br>
+> git branch 삭제 : git branch -d {id} (뭔가 위험해보이니까 하지 말자.)<br>

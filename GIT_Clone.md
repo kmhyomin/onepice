@@ -120,7 +120,7 @@ i를 누르면 인서트 상태가 됨
 
 
 ### git bash 복붙
-복 : shift + ctrl+ insert
+복 : shift + ctrl+ insert <br>
 붙 : shift + insert
 
 

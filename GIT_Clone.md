@@ -63,8 +63,8 @@
 >- vscode 터미널에서 git checkout -b 브랜치 이름 적기 : 브랜치를 새로 만들면서 들어가는 명령어
 >- git lab 확인해서 브랜치가 생겼는히 확인
    >- **희망편**
-      >>- **git status**(이건 스테이터스 라고  읽는 것이다.) 엔터
-      >>- On branch main<br>Your branch is up to date with 'origin/main'.<br><br>nothing to commit, working tree clean <br> 이 문구가 나왔다면 잘 된 것.
+   >>- **git status**(이건 스테이터스 라고  읽는 것이다.) 엔터
+   >>- On branch main<br>Your branch is up to date with 'origin/main'.<br><br>nothing to commit, working tree clean <br> 이 문구가 나왔다면 잘 된 것.
    >- **절망편**
    >>- git push --set-upstream origin 방금 만든 브랜치 이름
    >>- git lab 확인

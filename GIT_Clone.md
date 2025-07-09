@@ -36,11 +36,12 @@
   >- 원하는 곳에 만들면 된다.
   >- 파일 경로는 복사해두기 (설치할 곳에 파일 만들기 -> 빈 파일 들어가기 -> 위에 있는 **경로 복사 해서 메모장에 복붙**해두기)
 ### 2. git의 사용자 정보 설정 확인
+  >- **터미널을 여는데 관리자 모드로 실행해야함.** (이때 연 터미널은 vsCode에서 npm i 전까지 닫으면 안됨)
   >- git config --list 엔터
   >- 밑으로 스크롤하며 user.name과 user.email이 있는지 확인
   >- **없다면** <br>
   **git config --global user.name 이름**<br>
-  **git config --global user.email "이메일 .com까지 확실히 적기"**<br>
+  **git config --global user.email "이메일.com까지 확실히 적기"**<br>
   **--** 의 의미는 option의 이름 <br>
   **--global**은 Git 설정을 모든 프로젝트에 적용하려는 경우 사용하는 옵션이다. 한 번 설정하면 컴퓨터 전체에서 동일한 설정을 사용하게 된다.
   >- git config --global --list 엔터해서 잘 기입 됐는지 확인
@@ -50,17 +51,30 @@
   >- HTTP 주소를 사용했기 때문에 *사용자명과 비밀번호 입력 필요*
   >- **Username for** 이 뜨면 사용자 명은 아까 입력한 것 그대로 기입
   >- **Password for** 이 뜨면 비밀번호는 본인의 git 비밀번호(쳐도 보안 때문에 출력되어 나오진 않음)
-### 4. git 상태 확인
-  >- cd (클론한 파일명) **ex : (cd react_movie_web)**
-  >- **git status**(이건 스테이터스 라고  읽는 것이다.) 엔터
-  - On branch main<br>Your branch is up to date with 'origin/main'.<br><br>nothing to commit, working tree clean <br> 이 문구가 나왔다면 잘 된 것.
-  >-  추가 질문 사항 => [chat GPT](https://chatgpt.com/)
+### React 새 파일 만들기
+>- 터미널 열고 cd (클론한 파일명) ex => cd alone
+>- npm create vite@latest 기입
+>- 프로젝트 이름 입력 (대문자 되는데 그러면 한번 더 적어야함)
+>- React 선택 (조작은 상하좌우 키)
+>- TypeScript 선택
+>- vsCode로 가서 터미널 열고 npm i
 
+### 4. git 상태 확인
+>- vscode 터미널에서 git checkout -b 브랜치 이름 적기 : 브랜치를 새로 만들면서 들어가는 명령어
+>- git lab 확인해서 브랜치가 생겼는히 확인
+   >- **희망편**
+      >>- **git status**(이건 스테이터스 라고  읽는 것이다.) 엔터
+      >>- On branch main<br>Your branch is up to date with 'origin/main'.<br><br>nothing to commit, working tree clean <br> 이 문구가 나왔다면 잘 된 것.
+   >- **절망편**
+   >>- git push --set-upstream origin 방금 만든 브랜치 이름
+   >>- git lab 확인
+   >>- 있다면 vsCode로 돌아가서 터미널 열고 git status
+>-  추가 질문 사항 => [chat GPT](https://chatgpt.com/)
+   
 ### 5. 최종확인
 >- vsCode로 파일 열기
->- 터미널 열어서 npm start 엔터
->- 안되면 npm install
-
+>- 터미널 열어서 npm install
+>- 터미널 열어서 npm start
 
 ## 추가 정리본
 git statu 후
@@ -69,29 +83,6 @@ git add 할 때
 .은 내 현재 폴더에 접근 후 전부 업데이트 혹은 수정 저장 완료
 ./ 후 경로를 올리면 ㄱ
 
-git commit -m "" :메세지 입력
-git log는 커밋의 히스토리를 보는 것
-
-빨간 색이 원격 브렌치
-git push를 하면 변경사항 모든게 랩에 올라감.
-안전을 위해 git push origin/mian
-
-git pull 원격 브랜치와 내 pc의 작업 환경을 최신화 시키는 것.
-
-## 작업 종료후 저장하는 법. (git bash기준)
-띄어쓰기 욘니 중요하다는거임;
->### git add (저장)
->1. git add . : .(점)의 의미 => 모두
->2. git add ./ : /(슬래시) 뒤에 저장하고픈 폴더의 경로를 작성.
-
->### git commit (부가설명 추가)
->1. git commit -m "" : 내가 이런걸 했다. 는 메세지를 붙이는 것. 간결하고 의도가 명확히 드러나야함.
-> ex1. index.js파일의 오류를 수정했다 => git commit -m "fix: index.js"
-> ex2. index.js파일에 기능을 추가했다 => git commit -m "add: index.js"
-커밋은 하나하나 id를 갖고 있음
-### git push
->1. 일반적인 명령어 : git push
->2. 안전을 위한 명령어 (권장) : git push origin khm83029
 
 
 하면 안되는거

@@ -3,7 +3,7 @@
 
 # git 설치
 제일 먼저 해야하는 기초
->- cunpig (컨피그) : 설정창 같은 것. 
+>- cunfig (컨피그) : 설정창 같은 것. 
 >- 터미널에  git config --list 치고 user.name 회사 이메일 앞자리 숫자 허용(kmh83029) 치고 엔터
 >- 터미널에  git config --list 치고 user.emil 이건 이메일 치고 엔터
 >- git config --global --list
@@ -123,3 +123,4 @@ i를 누르면 인서트 상태가 됨
 > git switch {바꾸고 싶은 브랜치 이름} : 오직 브랜치를 바꾸기 위한 명령어.(v 2.13보다 커야 작동됨)<br>
 > git checkout {옮길 파일 이름} : branch 바꾸는 명령어임 <br>
 > git branch 삭제 : git branch -d {id} (뭔가 위험해보이니까 하지 말자.)<br>
+

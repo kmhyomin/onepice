@@ -4,7 +4,8 @@
 # git 설치
 제일 먼저 해야하는 기초
 >- config (컨피그) : 설정창 같은 것.
->- powerShell 기준 
+>- powerShell 기준
+>- git config --global --list name이랑 email이 있는지 확인. 있다면 깃 클론으로 넘어가기
 >- git config --global user.name "git에서 사용중인 이름"
 >- git config --global user.email "사용할 이메일(되도록 통일하는게 좋음)"
 >- git config --global --list 해서 name이랑 email 들어간거 확인
@@ -123,6 +124,7 @@ i를 누르면 인서트 상태가 됨
 > git switch {바꾸고 싶은 브랜치 이름} : 오직 브랜치를 바꾸기 위한 명령어.(v 2.13보다 커야 작동됨)<br>
 > git checkout {옮길 파일 이름} : branch 바꾸는 명령어임 <br>
 > git branch 삭제 : git branch -d {id} (뭔가 위험해보이니까 하지 말자.)<br>
+
 
 
 
